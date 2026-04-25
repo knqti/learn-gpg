@@ -14,7 +14,7 @@ Clone this repository and navigate into the directory.
 
 ```bash
 git clone https://github.com/knqti/learn-gpg
-cd ~/learn-gpg
+cd ./learn-gpg
 ```
 
 ## :closed_lock_with_key: Create your key pair
@@ -66,7 +66,7 @@ It's good practice to confirm the public key truly came from who you expected. C
 gpg --fingerprint <friend@email.com>
 ```
 
-Once confirmed, you can tell GPG you've validated the public key.
+Once confirmed, you can tell GPG you've validated the public key by signing off on it.
 
 ```bash
 gpg --sign-key <fingerprint>
