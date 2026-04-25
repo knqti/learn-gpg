@@ -1,14 +1,14 @@
 # learn-gpg
 
-:closed_lock_with_key: Encrypt & decrypt with GPG (GNU Privacy Guard).
+Encrypt & decrypt with GPG (GNU Privacy Guard).
 
-## Installation
+## :file_folder: Installation
 
 [Download and install GPG.](https://gnupg.org/download/index.html)
 
 > Note: GPG is already included in most Linux distros.
 
-## Clone repo
+## :octocat: :arrow_down: Clone repo
 
 Clone this repository and navigate into the directory.
 
@@ -17,7 +17,7 @@ git clone https://github.com/knqti/learn-gpg
 cd ~/learn-gpg
 ```
 
-## Create your key pair
+## :closed_lock_with_key: Create your key pair
 
 ```bash
 gpg --full-generate-key
@@ -33,12 +33,12 @@ gpg --full-generate-key
 
 > Note: Use `gpg --generate-key` for default selections.
 
-## Import public key
+## :key: Import public key
 
 Import the public key.
 
 ```bash
-gpg --import knqti_pub_key_gpg
+gpg --import knqti_pub_key.gpg
 ```
 
 Check that it worked.
@@ -81,7 +81,7 @@ You can tell GPG how much you trust someone (ie, "I believe this *person* is goo
 ```bash
 gpg --edit-key <friend@email.com>
 trust
-<trust level>
+<trust_level>
 save
 ```
 
@@ -93,7 +93,7 @@ Trust levels:
 - 4 = I trust fully
 - 5 = I trust ultimately
 
-## Encrypt a message
+## :lock: Encrypt a message
 
 Create a message, sign, and encrypt it.
 
@@ -103,7 +103,7 @@ echo "your message here" | gpg --sign --encrypt --recipient knqti --output <encr
 
 You'll now have a new file `<encrypted_file>.gpg`.
 
-## Prepare your public key
+## :key: Prepare your public key
 
 You need to send your public key to your recipient so they can write encrypted messages back to you.
 
@@ -111,11 +111,11 @@ You need to send your public key to your recipient so they can write encrypted m
 gpg --export <your_email> > <your_public_key>.gpg
 ```
 
-## Sync back to the repo
+## :octocat: :arrow_up: Sync back to the repo
 
 You should now have 4 files in your directory:
 
-1. knqti_pub_key_gpg
+1. knqti_pub_key.gpg
 2. README.md
 2. <encrypted_file>.gpg
 3. <your_public_key>.gpg
